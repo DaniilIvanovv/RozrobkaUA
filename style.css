@@ -1,0 +1,265 @@
+/* Загальні стилі */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #555;
+    background-color: #f5f5f5;
+}
+
+/* Обгортка для контенту */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Стилі для заголовків */
+h1, h2 {
+    font-weight: 700;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+/* Стилі для посилань */
+a {
+    color: #778899;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #546e7a;
+}
+
+/* Стилі для кнопки */
+.button {
+    background-color: #778899;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: #546e7a;
+}
+
+/* Стилі для шапки (header) */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #34495e;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #ecf0f1;
+}
+
+/* Стилі для секцій */
+section {
+    padding: 60px 0;
+}
+
+section:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+#hero {
+    background-color: #778899;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+#hero h1 {
+    color: #fff;
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+
+#hero p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+/* Стилі для послуг */
+#services {
+    text-align: center;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 30px;
+}
+
+.service {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+}
+
+.service h3 {
+    margin-bottom: 15px;
+    color: #34495e;
+}
+
+/* Стилі для портфоліо */
+#portfolio {
+    text-align: center;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 30px;
+}
+
+.portfolio-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Стилі для секції "Контакти" */
+#contact {
+    text-align: left; /* Вирівнювання тексту зліва */
+    padding: 60px 0;
+}
+
+#contact .container {
+    max-width: 800px; /* Зменшена ширина контейнера */
+    margin: 0 auto; /* Центрування */
+    padding: 0 20px; /* Додаткові відступи */
+}
+
+#contact h2 {
+    margin-bottom: 30px; /* Збільшений відступ під заголовком */
+}
+
+#contact p {
+    font-size: 1.1em; /* Збільшений розмір шрифту */
+    line-height: 1.7; /* Збільшений міжрядковий інтервал */
+    margin-bottom: 20px; /* Збільшений відступ під текстом */
+}
+
+#contact ul {
+    list-style: none; /* Видалення маркерів списку */
+    padding: 0;
+    margin: 0;
+}
+
+#contact li {
+    font-size: 1.1em; /* Збільшений розмір шрифту */
+    margin-bottom: 10px; /* Відступ між елементами списку */
+}
+
+#contact strong {
+    font-weight: bold; /* Жирний шрифт для виділення */
+}
+
+
+/* Стилі для футера */
+footer {
+    background-color: #34495e;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Адаптивні стилі (Media Queries) */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    #hero {
+        padding: 80px 0;
+    }
+
+    #hero h1 {
+        font-size: 2em;
+    }
+
+    .services-container, .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+
+    .service, .portfolio-item {
+        margin-bottom: 20px;
+    }
+
+    #contact {
+        text-align: center; /* Центрування контенту в секції контактів на малих екранах */
+    }
+}
