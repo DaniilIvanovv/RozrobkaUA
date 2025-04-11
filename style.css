@@ -1,10 +1,63 @@
+/* Стилі для кнопки зміни теми */
+#theme-toggle {
+    background-color: transparent; /* Прозорий фон */
+    color: #fff; /* Білий текст */
+    border: 2px solid #fff; /* Біла рамка */
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1em;
+}
+
+#theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Легкий білий фон при наведенні */
+    color: #fff;
+}
+
+
+/* Змінні кольорів за замовчуванням (денна тема) */
+:root {
+  --primary-color: #f1c40f; /* Золотий */
+  --secondary-color: #2ecc71; /* Зелений */
+  --background-color: #f8f8f8;
+  --text-color: #000;
+  --header-bg: rgba(0, 0, 0, 0.3); /* Напівпрозорий фон для шапки */
+}
+
+/* Стилі для нічної теми */
+body.dark-theme {
+  --background-color: #333;
+  --text-color: #eee;
+  --header-bg: rgba(255, 255, 255, 0.1); /* Змінено фон шапки для нічної теми */
+}
+
+body.dark-theme header {
+    background-color: var(--header-bg); /* Застосування фону з змінної */
+}
+
+body.dark-theme .logo,
+body.dark-theme nav a {
+    color: #fff; /* Змінено колір тексту в шапці для нічної теми */
+}
+
+body.dark-theme section:nth-child(even) {
+    background-color: #444; /* Змінено фон секцій для нічної теми */
+}
+
+body.dark-theme .service {
+    background-color: #555; /* Змінено фон секцій для нічної теми */
+    color: #eee;
+}
+
 /* Загальні стилі */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     line-height: 1.6;
-    color: #555;
-    background-color: #f5f5f5;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Обгортка для контенту */
@@ -17,8 +70,9 @@ body {
 /* Стилі для заголовків */
 h1, h2 {
     font-weight: 700;
-    color: #34495e;
+    color: var(--primary-color);
     margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
@@ -43,7 +97,7 @@ a:hover {
 
 /* Стилі для кнопки */
 .button {
-    background-color: #778899;
+    background-color: var(--secondary-color);
     color: #fff;
     padding: 15px 30px;
     border-radius: 5px;
@@ -53,16 +107,18 @@ a:hover {
 }
 
 .button:hover {
-    background-color: #546e7a;
+    background-color: color-mix(in srgb, var(--secondary-color) 80%, black);
 }
+
 
 /* Стилі для шапки (header) */
 header {
-    background-color: #fff;
+    background-color: var(--header-bg);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: background-color 0.3s ease;
 }
 
 nav {
@@ -75,7 +131,8 @@ nav {
 .logo {
     font-size: 1.5em;
     font-weight: bold;
-    color: #34495e;
+    color: #fff; /* Змінено колір логотипу на білий */
+    transition: color 0.3s ease;
 }
 
 nav ul {
@@ -94,15 +151,17 @@ nav a {
     padding: 10px 15px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    color: #fff; /* Змінено колір посилань в шапці на білий */
 }
 
 nav a:hover {
-    background-color: #ecf0f1;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Стилі для секцій */
 section {
     padding: 60px 0;
+    transition: background-color 0.3s ease;
 }
 
 section:nth-child(even) {
@@ -110,14 +169,23 @@ section:nth-child(even) {
 }
 
 #hero {
-    background-color: #778899;
-    color: #fff;
+    color: #000;
     text-align: center;
     padding: 100px 0;
+    background-image: url('Kiev.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+     filter: brightness(60%) grayscale(20%);
+}
+
+#hero .container {
+    position: relative;
+    z-index: 1;
 }
 
 #hero h1 {
-    color: #fff;
+    color: var(--primary-color);
     font-size: 3em;
     margin-bottom: 30px;
 }
@@ -144,7 +212,7 @@ section:nth-child(even) {
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .service:hover {
@@ -153,7 +221,7 @@ section:nth-child(even) {
 
 .service h3 {
     margin-bottom: 15px;
-    color: #34495e;
+    color: var(--primary-color);
 }
 
 /* Стилі для портфоліо */
@@ -181,47 +249,47 @@ section:nth-child(even) {
 
 .portfolio-item img {
     width: 100%;
-    height: auto;
+    height: 250px;
+    object-fit: contain;
     display: block;
 }
 
 /* Стилі для секції "Контакти" */
 #contact {
-    text-align: left; /* Вирівнювання тексту зліва */
+    text-align: left;
     padding: 60px 0;
 }
 
 #contact .container {
-    max-width: 800px; /* Зменшена ширина контейнера */
-    margin: 0 auto; /* Центрування */
-    padding: 0 20px; /* Додаткові відступи */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 #contact h2 {
-    margin-bottom: 30px; /* Збільшений відступ під заголовком */
+    margin-bottom: 30px;
 }
 
 #contact p {
-    font-size: 1.1em; /* Збільшений розмір шрифту */
-    line-height: 1.7; /* Збільшений міжрядковий інтервал */
-    margin-bottom: 20px; /* Збільшений відступ під текстом */
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 20px;
 }
 
 #contact ul {
-    list-style: none; /* Видалення маркерів списку */
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
 #contact li {
-    font-size: 1.1em; /* Збільшений розмір шрифту */
-    margin-bottom: 10px; /* Відступ між елементами списку */
+    font-size: 1.1em;
+    margin-bottom: 10px;
 }
 
 #contact strong {
-    font-weight: bold; /* Жирний шрифт для виділення */
+    font-weight: bold;
 }
-
 
 /* Стилі для футера */
 footer {
@@ -260,6 +328,6 @@ footer {
     }
 
     #contact {
-        text-align: center; /* Центрування контенту в секції контактів на малих екранах */
+        text-align: center;
     }
 }
