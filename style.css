@@ -50,6 +50,20 @@ body.dark-theme .service {
     color: #eee;
 }
 
+body.dark-theme .pricing-plan {
+    background-color: #555; /* Змінено фон для нічної теми */
+    color: #eee; /* Змінено колір тексту для нічної теми */
+}
+
+body.dark-theme .pricing-plan h3,
+body.dark-theme .pricing-plan .price {
+    color: var(--primary-color); /* Колір заголовків та цін */
+}
+
+body.dark-theme .pricing-plan ul li {
+    color: #eee; /* Колір елементів списку */
+}
+
 /* Загальні стилі */
 body {
     font-family: 'Roboto', sans-serif;
@@ -157,7 +171,15 @@ nav a {
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
-
+/* Стилі для гамбургер-меню */
+.menu-toggle {
+    display: none; /* Приховати кнопку на великих екранах */
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
 /* Стилі для секцій */
 section {
     padding: 60px 0;
@@ -199,7 +221,6 @@ section:nth-child(even) {
 #services {
     text-align: center;
 }
-
 .services-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -299,11 +320,61 @@ footer {
     padding: 20px;
 }
 
+/* Стилі для секції "Ціни" */
+#pricing {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.pricing-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 30px;
+}
+
+.pricing-plan {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.pricing-plan:hover {
+    transform: translateY(-5px);
+}
+
+.pricing-plan h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.pricing-plan .price {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.pricing-plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.pricing-plan li {
+    margin-bottom: 10px;
+}
+
 /* Адаптивні стилі (Media Queries) */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
         align-items: center;
+            display: none;
+
     }
 
     nav li {
@@ -319,15 +390,38 @@ footer {
         font-size: 2em;
     }
 
-    .services-container, .portfolio-container {
+    .services-container, .portfolio-container, .pricing-container {
         grid-template-columns: 1fr;
     }
 
-    .service, .portfolio-item {
+    .service, .portfolio-item, .pricing-plan {
         margin-bottom: 20px;
     }
 
     #contact {
         text-align: center;
     }
+     .menu {
+            display: none; /* Приховати меню на маленьких екранах */
+            flex-direction: column;
+            position: absolute;
+            top: 60px; /* Adjust to your header height */
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9); /* Adjust as needed */
+            text-align: center;
+        }
+
+        .menu li {
+            margin: 0;
+        }
+
+        .menu a {
+            padding: 15px;
+            display: block;
+        }
+
+        .menu-toggle {
+            display: block; /* Показати кнопку на маленьких екранах */
+        }
 }

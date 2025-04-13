@@ -9,24 +9,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> <!-- Додано Montserrat -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> <!-- Animate.css -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
 
   <header>
   <nav class="container">
       <div class="logo">Розробка UA</div>
-      <ul>
+      <button id="menu-toggle" class="menu-toggle">&#9776;</button>
+      <ul class="menu">
           <li><a href="#about">Про нас</a></li>
           <li><a href="#services">Послуги</a></li>
           <li><a href="#portfolio">Портфоліо</a></li>
+          <li><a href="#pricing">Ціни</a></li>
           <li><a href="#contact">Контакти</a></li>
       </ul>
-      <button id="theme-toggle">Змінити тему</button> <!-- Кнопка зміни теми -->
+      <button id="theme-toggle">Змінити тему</button>
   </nav>
 </header>
-
 
     <section id="hero">
         <div class="container">
@@ -48,18 +49,17 @@
             <h2>Наші послуги</h2>
             <div class="services-container">
                 <div class="service">
-                    <!-- Замініть іконки на реальні -->
-                    <i class="fas fa-code"></i> <!-- Приклад іконки Font Awesome -->
+                    <i class="fas fa-code"></i>
                     <h3>Розробка сайтів</h3>
                     <p>Створення сучасних та функціональних веб-сайтів будь-якої складності. Від лендінгів до корпоративних порталів.</p>
                 </div>
                 <div class="service">
-                    <i class="fas fa-gamepad"></i> <!-- Приклад іконки Font Awesome -->
+                    <i class="fas fa-gamepad"></i>
                     <h3>Розробка ігор</h3>
                     <p>Розробка ігор для PC, мобільних платформ та консолей. Створення захопливих та інтерактивних ігрових світів.</p>
                 </div>
                 <div class="service">
-                    <i class="fas fa-mobile-alt"></i> <!-- Приклад іконки Font Awesome -->
+                    <i class="fas fa-mobile-alt"></i>
                     <h3>Розробка мобільних додатків</h3>
                     <p>Створення мобільних додатків для iOS та Android. Розробка інтуїтивно зрозумілих та корисних додатків для вашого бізнесу.</p>
                 </div>
@@ -90,24 +90,145 @@
         </div>
     </section>
 
+    <section id="pricing">
+        <div class="container">
+            <h2>Ціни</h2>
+            <p>Ознайомтеся з нашими тарифними планами та оберіть оптимальний для себе.</p>
+            <div class="pricing-container">
+                <div class="pricing-plan">
+                    <h3>Лендінг</h3>
+                    <p class="price">Від 15 000₴</p>
+                    <ul>
+                        <li>Ефективний старт для вашого бізнесу! Швидко, красиво, з високою конверсією.</li>
+                        <li>Технічна підтримка 3 місяці</li>
+                    </ul>
+                    <a href="#contact" class="button">Замовити</a>
+                </div>
+                <div class="pricing-plan">
+                    <h3>Корпоративний сайт</h3>
+                    <p class="price">Від 60 000₴</p>
+                    <ul>
+                        <li>Представницьке обличчя компанії онлайн. Підкресліть свій професіоналізм та залучайте нових клієнтів!</li>
+                        <li>Технічна підтримка 12 місяців</li>
+                    </ul>
+                    <a href="#contact" class="button">Замовити</a>
+                </div>
+                <div class="pricing-plan">
+                    <h3>Інтернет-магазин</h3>
+                    <p class="price">Від 32 000₴</p>
+                    <ul>
+                        <li>Почніть продавати онлайн! Готовий інструмент для прибуткової торгівлі 24/7.</li>
+                        <li>Технічна підтримка 6 місяців</li>
+                    </ul>
+                    <a href="#contact" class="button">Замовити</a>
+                </div>
+                <div class="pricing-plan">
+                    <h3>Сайт-візитка</h3>
+                    <p class="price">Від 6 000₴</p>
+                    <ul>
+                        <li>Ваша онлайн-презентація. Просто, стильно, інформативно.</li>
+                        <li>Технічна підтримка 3 місяці</li>
+                    </ul>
+                    <a href="#contact" class="button">Замовити</a>
+                </div>
+                <div class="pricing-plan">
+                    <h3>Блог/Новинний сайт</h3>
+                    <p class="price">Від 45 000₴</p>
+                    <ul>
+                        <li>Поділіться експертизою, залучайте аудиторію! Платформа для вашого контенту.</li>
+                        <li>Технічна підтримка 9 місяців</li>
+                    </ul>
+                    <a href="#contact" class="button">Замовити</a>
+                </div>
+                <div class="pricing-plan">
+                    <h3>Простий застосунок</h3>
+                    <p class="price">Від 35 000₴</p>
+                    <ul>
+                        <li>Ваша ідея в мобільному форматі! Легко, зручно, доступно вашим користувачам.</li>
+                    </ul>
+                    <a href="#contact" class="button">Замовити</a>
+                </div>
+                <div class="pricing-plan">
+                    <h3>Застосунок середньої складності</h3>
+                    <p class="price">Від 80 000₴</p>
+                    <ul>
+                        <li>Розширені можливості для бізнесу! Автоматизація, взаємодія, ефективність.</li>
+                    </ul>
+                    <a href="#contact" class="button">Замовити</a>
+                </div>
+                <div class="pricing-plan">
+                    <h3>Складний застосунок</h3>
+                    <p class="price">Зараз не розробляється</p>
+                    <ul>
+                        <li>Інноваційне рішення ваших задач! Кастомна розробка для досягнення цілей.</li>
+                    </ul>
+                    <a href="#contact" class="button">Замовити</a>
+                </div>
+                <div class="pricing-plan">
+                    <h3>Проста мобільна гра</h3>
+                    <p class="price">Від 18 000₴</p>
+                    <ul>
+                        <li>Розвага для широкої аудиторії! Захопливий геймплей та проста монетизація.</li>
+                    </ul>
+                    <a href="#contact" class="button">Замовити</a>
+                </div>
+                <div class="pricing-plan">
+                    <h3>2D платформер</h3>
+                    <p class="price">Від 10 000₴</p>
+                    <ul>
+                        <li>Класика в новому виконанні! Ностальгія, захопливість та веселощі.</li>
+                    </ul>
+                    <a href="#contact" class="button">Замовити</a>
+                </div>
+                <div class="pricing-plan">
+                    <h3>3D гра середньої складності</h3>
+                    <p class="price">Від 120 000₴</p>
+                    <ul>
+                        <li>Занурення у віртуальний світ! Захопливий геймплей та цікавий сюжет.</li>
+                    </ul>
+                    <a href="#contact" class="button">Замовити</a>
+                </div>
+                <div class="pricing-plan">
+                    <h3>3D гра з реалістичною графікою</h3>
+                    <p class="price">Зараз не розробляється</p>
+                    <ul>
+                        <li>Новий рівень реалізму! Приголомшлива графіка та захопливий геймплей.</li>
+                    </ul>
+                    <a href="#contact" class="button">Замовити</a>
+                </div>
+                <div class="pricing-plan">
+                    <h3>MMO гра</h3>
+                    <p class="price">Зараз не розробляється</p>
+                    <ul>
+                        <li>Створіть свій всесвіт! Нескінченні можливості та взаємодія з тисячами гравців.</li>
+                    </ul>
+                    <a href="#contact" class="button">Замовити</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
         <div class="container">
             <h2>Контакти</h2>
             <p>Зв'яжіться з нами, щоб обговорити ваші проекти та ідеї!</p>
             <ul>
                 <li><strong>Email:</strong> ivanovvdaniil2024@gmail.com</li>
-                <li><strong>Телефон:</strong>+38(093)9665987</li>
-            </ul>
-        </div>
-    </section>
+                <li><strong>Телефон:</strong>+38(093)9665987
+                </li>
+                            </ul>
+                        </div>
+                    </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Розробка UA. Всі права захищено.</p>
-        </div>
-    </footer>
+                    <footer>
+                        <div class="container">
+                            <p>&copy; 2025 Розробка UA. Всі права захищено.</p>
+                        </div>
+                    </footer>
 
-    <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script>
-</body>
-</html>
+                    <script src="theme.js"></script>
+                    <script src="menu.js"></script>
+                    <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script>
+                </body>
+                </html>
